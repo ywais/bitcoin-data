@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const ChangeSign = styled.h2`
@@ -16,16 +16,17 @@ const ColoredH3 = styled.h3`
 
 function Header() {
   const [realTimeData, setRealTimeData] = useState({});
-  const fxeWebSocket = new WebSocket('wss://wstest.fxempire.com?token=btctothemoon');
-  
-  fxeWebSocket.onopen = () => {
-    fxeWebSocket.send('{"type":"SUBSCRIBE","instruments":["cc-btc-usd-cccagg"]}');
-  }
 
-  fxeWebSocket.onmessage = event => {
-    const message = JSON.parse(event.data);
-    setRealTimeData(message['cc-btc-usd-cccagg']);
-}
+  useEffect(() => {
+    const fxeWebSocket = new WebSocket('wss://wstest.fxempire.com?token=btctothemoon');
+    fxeWebSocket.onopen = () => {
+      fxeWebSocket.send('{"type":"SUBSCRIBE","instruments":["cc-btc-usd-cccagg"]}');
+    }
+    fxeWebSocket.onmessage = event => {
+      const message = JSON.parse(event.data);
+      setRealTimeData(message['cc-btc-usd-cccagg']);
+    }
+  });
 
   const numToFomatedString = (num, isChange) => {
     if(Number.isFinite(num)) { // varifying num is a Number
