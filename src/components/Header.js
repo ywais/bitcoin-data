@@ -48,11 +48,13 @@ function Header() {
           <h2>Bitcoin</h2>
         </div>
         <div className='leftSideHeaderRow'>
-          <p>
-            {!!Object.keys(realTimeData).length ?
-              `As of: ${realTimeData.lastUpdate}` :
-              'Getting the latest information...' }
-          </p>
+          {!!Object.keys(realTimeData).length ?
+            <p>As of: ${realTimeData.lastUpdate}</p> :
+            <div className='leftSideHeaderRow loadingMessage'>
+              <p>Getting the latest information...</p>
+              <img id='loadingIcon' src='loading.png' alt="loading icon" width="20" height="20" />
+            </div>
+          }
         </div>
       </div>
       {!!Object.keys(realTimeData).length
