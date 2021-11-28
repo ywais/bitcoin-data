@@ -1,0 +1,76 @@
+/* ~~~~~~~~ HEADER ~~~~~~~~ */
+.header {
+  height: 15vh;
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  box-shadow: 0px 1.5px 5px 2px #bfbfbf;
+}
+
+.header h1, h2, p {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.leftSideHeader, .rightSideHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leftSideHeaderRow {
+  display: flex;
+  align-items: center;
+}
+
+.rightSideHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftSideHeaderRow h2 {
+  padding-left: 10px;
+}
+
+/* ~~~~~~~~ TABS ~~~~~~~~ */
+.tabsContainer {
+  margin: 1em;
+}
+
+.innerTab {
+  min-height: 25vh;
+  width: 100%;
+}
+
+/* ~~~ navbars ~~~ */
+.tabsNavBar button {
+  margin: 10px 0;
+  padding: 5px 30px 10px;
+  font-size: larger;
+  font-weight: bold;
+  border: none;
+  color: gray;
+  background-color: white;
+}
+
+.tabsNavBar button:disabled {
+  color: #406F93;
+  border-bottom: 2px solid #406F93;
+}
+
+.timeFrameSelectors button {
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  background-color: white;
+}
+
+.timeFrameSelectors button:disabled {
+  color: black;
+  border-bottom: 2px solid #000;
+}

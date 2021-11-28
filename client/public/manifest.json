@@ -1,0 +1,15 @@
+{
+  "short_name": "Bitcoin Data",
+  "name": "Bitcoin overview and history web site",
+  "icons": [
+    {
+      "src": "btc.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
