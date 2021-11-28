@@ -49,7 +49,7 @@ function Header() {
         </div>
         <div className='leftSideHeaderRow'>
           {!!Object.keys(realTimeData).length ?
-            <p>As of: ${realTimeData.lastUpdate}</p> :
+            <p>As of: {new Date(realTimeData.lastUpdate).toUTCString()}</p> :
             <div className='leftSideHeaderRow loadingMessage'>
               <p>Getting the latest information...</p>
               <img id='loadingIcon' src='loading.png' alt="loading icon" width="20" height="20" />
